@@ -1,0 +1,88 @@
+.marketContainer {
+    width: 100%;
+    height: 100%;
+    @include flexbox();
+    @include flex-direction(column);
+
+    header {
+        width: 100%;
+        height: 64px;
+        .head{
+          width: 100%;
+          height: 100%;
+          position: relative;
+          div{
+            height: 40px;
+            font-size: 14px;
+            line-height: 40px;
+            text-align: center;
+          }
+          > span{
+            position: absolute;
+            color: #fa6650;
+            font-size: 14px;
+            left: 10px;
+            top: 10px;
+          }
+          form{
+            @include flexbox();
+            @include justify-content(center);
+            @include align-items(center);
+            width: 90%;
+            height: 20px;
+            background: rgba(161, 166, 171, 0.46);
+            border-radius: 4px;
+            margin: 0 auto;
+            .search {
+                font-size: 12px;
+                margin-right: 10px;
+            }
+            .iconfont {
+                font-family: "iconfont";
+                font-size: 16px;
+            }
+          }
+        }
+    }
+
+    #cityScroll {
+        @include flex();
+        width: 100%;
+        overflow: hidden;
+        position: relative;
+        > div {
+            width: 100%;
+            li {
+                width: 100%;
+                height: 24px;
+                font-size: 12px;
+                line-height: 24px;
+                position: relative;
+                padding: 0 10px;
+            }
+
+            li::after {
+                content: '';
+                position: absolute;
+                left: 10px;
+                bottom: 0;
+                background: rgba(135, 135, 143,0.4);
+                width: 96%;
+                height: 1px;
+                // 适配dpr进行缩放
+                @include responsive(retina2x) {
+                    @include transform(scaleY(.5));
+                }
+                @include responsive(retina3x) {
+                    @include transform(scaleY(.33333));
+                }
+                @include transform-origin(0 0);
+            }
+            .title::after{
+              content: '';
+              position: absolute;
+              width: 0;
+            }
+        }
+    }
+}

@@ -1,0 +1,337 @@
+
+body {
+    background: #fff;
+}
+.indexContainer {
+    width: 100%;
+    height: 100%;
+    @include flexbox();
+    @include flex-direction(column);
+
+    header {
+        width: 100%;
+        height: 44px;
+        @include flexbox();
+        @include justify-content(space-around);
+        @include align-items(center);
+
+        .iconfont {
+            font-family: "iconfont";
+            font-size: 16px;
+        }
+
+        .shopCart {
+            font-size: 20px;
+        }
+
+        form {
+            @include flexbox();
+            @include justify-content(center);
+            width: 70%;
+            height: 24px;
+            border-radius: 4px;
+            line-height: 24px;
+            background: rgba(161, 166, 171, 0.46);
+
+            .search {
+                font-size: 14px;
+                margin-right: 10px;
+            }
+
+            span {
+                font-size: 12px;
+            }
+        }
+    }
+
+        #myScroll {
+            @include flex(1);
+            width: 100%;
+            padding: 0 10px;
+            overflow: hidden;
+            > div {
+                width: 100%;
+                position: relative;
+                padding-bottom: 40px;
+                .nav {
+                    width: 100%;
+                    height: 80px;
+                    @include flexbox();
+                    @include justify-content(space-around);
+
+                    div {
+                        @include flexbox();
+                        @include flex-direction(column);
+                        @include align-items();
+                        width: 20%;
+
+                        img {
+                            width: 40px;
+                            height: 40px;
+                        }
+
+                        span {
+                            text-align: center;
+                            font-size: 12px;
+                        }
+                    }
+                }
+
+                .show {
+                    width: 100%;
+                    height: 90px;
+                    @include flexbox();
+                    @include justify-content(space-around);
+
+                    div {
+                        width: 40%;
+                        height: 100%;
+                        position: relative;
+
+                        img {
+                            width: 100%;
+                            height: 100%;
+                        }
+
+                        span {
+                            position: absolute;
+                            color: #fff;
+                            font-size: 12px;
+                            bottom: 6px;
+                            width: 100%;
+                            text-align: center;
+                        }
+
+                        .iconfont {
+                            font-family: "iconfont";
+                            font-size: 34px;
+                            position: absolute;
+                            bottom: 24px;
+                            width: 100%;
+                            text-align: center;
+                            color: #fff;
+                        }
+                    }
+                }
+
+                .newLogin {
+                    width: 100%;
+                    height: 50px;
+                    margin-top: 10px;
+                }
+
+                .swiper-container {
+                    margin-top: 10px;
+                    height: 80px;
+
+                    .swiper-wrapper {
+                        height: 80px;
+
+                        .swiper-slide {
+                            @include flexbox();
+                            @include justify-content(space-around);
+
+                            img {
+                                width: 60px;
+                                height: 40px;
+                            }
+
+                            div {
+                                width: 140px;
+
+                                p {
+                                    width: 100%;
+                                    text-align: center;
+                                }
+
+                                .pro {
+                                    width: 100%;
+                                    text-align: center;
+                                    font-size: 10px;
+                                    color: rgb(147, 153, 185);
+                                }
+                            }
+                        }
+                    }
+                }
+                .ad {
+                    width: 100%;
+                    position: relative;
+
+                    p {
+                        text-align: center;
+                        height: 30px;
+                        line-height: 30px;
+                    }
+
+                    img {
+                        width: 100%;
+                        height: 80px;
+                    }
+
+                    .study {
+                        height: 30px;
+                        text-align: left;
+                        line-height: 30px;
+                        color: rgb(163, 172, 162);
+                    }
+                }
+
+                .ad::after {
+                    content: '';
+                    position: absolute;
+                    left: 0;
+                    background: rgb(135, 135, 143);
+                    width: 100%;
+                    height: 1px;
+                    // 适配dpr进行缩放
+                    @include responsive(retina2x) {
+                        @include transform(scaleY(.5));
+                    }
+                    @include responsive(retina3x) {
+                        @include transform(scaleY(.33333));
+                    }
+                    @include transform-origin(0 0);
+                }
+                .indexMsg1,.indexMsg2{
+                  img{
+                    width: 100%;
+                    height: 200px;
+                  }
+                }
+                .indexMsg1{
+                  position: relative;
+                  height: 220px;
+                  margin: 10px 0;
+                  .title{
+                    position: absolute;
+                    width: 100%;
+                    font-size: 16px;
+                    top: 80px;
+                    color: #fff;
+                    z-index: 99;
+                    text-align: center;
+                  }
+                  .menu{
+                    width: 100%;
+                    color: #fff;
+                    position: absolute;
+                    font-size: 10px;
+                    top: 110px;
+                    z-index: 99;
+                    text-align: center;
+                  }
+                }
+                .indexMsg2{
+                  margin: 10px 0;
+                  .title{
+                    font-size: 16px;
+                  }
+                  .content{
+                    width: 100%;
+                    font-size: 10px;
+                  }
+                }
+                .indexMsg3{
+                  position: relative;
+                  margin: 10px 0;
+                  .url{
+                    width: 100%;
+                    height: 200px;
+                  }
+                  .title{
+                    font-size: 16px;
+                  }
+                  .content{
+                    width: 100%;
+                    font-size: 10px;
+                  }
+                  .scoreAcount{
+                    font-size: 8px;
+                    color: rgb(169, 176, 180);
+                  }
+                  .author{
+                    position: absolute;
+                    right: 0;
+                    bottom: 10px;
+                    img{
+                      width: 40px;
+                      height: 40px;
+                      border-radius: 100%;
+                    }
+                    p{
+                      width: 100%;
+                      text-align: center;
+                      margin-top: 4px;
+                    }
+                  }
+                }
+                .indexMsg1::after{
+                    content: '';
+                    position: absolute;
+                    left: 0;
+                    bottom: 0;
+                    background: rgb(135, 135, 143);
+                    width: 100%;
+                    height: 1px;
+                    // 适配dpr进行缩放
+                    @include responsive(retina2x) {
+                        @include transform(scaleY(.5));
+                    }
+                    @include responsive(retina3x) {
+                        @include transform(scaleY(.33333));
+                    }
+                    @include transform-origin(0 0);
+                }
+                .indexMsg2::after{
+                  content: '';
+                  position: absolute;
+                  left: 0;
+                  z-index: 99;
+                  background: rgb(135, 135, 143);
+                  width: 100%;
+                  height: 1px;
+                  // 适配dpr进行缩放
+                  @include responsive(retina2x) {
+                      @include transform(scaleY(.5));
+                  }
+                  @include responsive(retina3x) {
+                      @include transform(scaleY(.33333));
+                  }
+                  @include transform-origin(0 0);
+                }
+                .indexMsg3::after{
+                  content: '';
+                  position: absolute;
+                  left: 0;
+                  z-index: 99;
+                  background: rgb(135, 135, 143);
+                  width: 100%;
+                  height: 1px;
+                  // 适配dpr进行缩放
+                  @include responsive(retina2x) {
+                      @include transform(scaleY(.5));
+                  }
+                  @include responsive(retina3x) {
+                      @include transform(scaleY(.33333));
+                  }
+                  @include transform-origin(0 0);
+                }
+                .pullUp{
+                  width: 100%;
+                  position: absolute;
+                  bottom: 0;
+                  div{
+                    width: 100%;
+                    height: 40px;
+                    text-align: center;
+                    line-height: 40px;
+                  }
+                }
+            }
+        }
+
+footer{
+  @extend .footer;
+}
+}
